@@ -2,6 +2,7 @@
   --main-green: #84a178;
   --main-yellow: #f8d24e;
   --light-yellow: #efd478;
+  --light-yellow-rgba: rgba(248, 210, 78, 0.1);
   --light-green: #aec6a5;
   --chocolate: #d6936d;
   --light-chocolate: #d5753f;
@@ -16,12 +17,13 @@
   --green-line: #9cbe8f;
   --green-border: #96af8c;
   --cubic-bezier: cubic-bezier(0.4, 0, 0.2, 1);
+  --second-family: "Seymour One", sans-serif;
 }
 body {
-  color: var(--text-light);
   font-family: Montserrat, sans-serif;
   background-color: var(--main-green);
 }
+
 /* 
 button:hover {
   transform: scale(1.1);
@@ -59,14 +61,67 @@ img {
   text-decoration: none;
 }
 
+/**
+  Наследуем свойства шрифт для полей ввода
+  */
+  input,
+  textarea,
+  select,
+  button {
+    font: inherit;
+  }
+  
+  html {
+    /*
+      Убираем скачок интерфейса по горизонтали
+      при появлении / исчезновении скроллбара
+      */
+    /* scrollbar-gutter: stable; */
+  }
+  
+  /*
+    Плавный скролл
+    */
+  html,
+  :has(:target) {
+    scroll-behavior: smooth;
+  }
+
+/* Чиним баг задержки смены цвета при взаимодействии с svg-элементами */
+svg * {
+transition-property: fill, stroke;
+}
+
+/* Курсор-рука при наведении на элемент */
+button,
+label {
+cursor: pointer;
+}
+
+/*
+Приводим к единому цвету svg-элементы
+*/
+[fill] {
+fill: currentColor;
+}
+[stroke] {
+stroke: currentColor;
+}
+
+
 .container {
-  justify-content: center;
   margin-left: auto;
   margin-right: auto;
 
-  @media screen and (max-width: 767px) {
+  @media screen and (max-width: 479px) {
     width: 100%;
     max-width: 480px;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  @media screen and (min-width: 480px) {
+    width: 480px;
     padding-left: 20px;
     padding-right: 20px;
   }
@@ -99,4 +154,616 @@ img {
   clip-path: inset(100%);
   clip: rect(0 0 0 0);
   overflow: hidden;
+}
+
+
+
+
+
+/* HEADER */
+
+.header__container{
+
+  padding-top: 12px;
+
+  @media screen and (min-width: 480px) {
+    padding-top: 14px; 
+  }
+
+  @media screen and (min-width: 768px) {
+    padding-top: 20px; 
+  }
+
+  @media screen and (min-width: 1200px) {
+    padding-top: 8px; 
+  }
+}
+
+.header{
+  display: flex;  
+  align-items: center;
+
+  @media screen and (max-width: 1199px) {
+    justify-content: space-between;
+  }
+}
+
+/* Logo */
+
+.header__logo{
+  z-index: 2;
+}
+
+.header__logo-svg{
+  width: 40px;
+  height: 37px;
+
+  fill: var(--main-yellow);
+
+  @media screen and (min-width: 480px) {
+    width: 48px;
+    height: 44px;
+  }
+
+  @media screen and (min-width: 1200px) {
+    width: 60px;
+    height: 65px;
+  }
+}
+
+
+/* Header-navigation */
+
+.header__nav{
+  padding-top: 32px;
+  padding-bottom: 13px;
+  margin-right: 204px;
+  margin-left: auto;
+
+  @media screen and (max-width: 1199px) {
+    position: absolute;
+    
+    display: none;
+  }
+}
+
+.header__list{
+  display: flex;
+}
+
+.header__item + .header__item{
+  @media screen and (min-width: 1200px) {
+    margin-left: 28px;
+  }
+}
+
+.header__item{
+  transition: transform 250ms var(--cubic-bezier);
+}
+
+.header__item:hover,
+.header__item:focus,
+.header__item:active{
+  transform: scale(1.15);
+}
+
+.header__link{
+  font-weight: 700;
+  color: var(--text-light);
+  transition: color 250ms var(--cubic-bezier);
+}
+
+.header__link:hover,
+.header__link:focus,
+.header__link:active{
+  color: var(--main-yellow);
+}
+
+.header__item:focus-within {
+  transform: scale(1.15);
+}
+
+/* Header-button */
+
+.header__box{
+  display: flex;
+  align-items: center;
+
+  
+
+  @media screen and (min-width: 768px) {
+    padding-top: 4px;
+    padding-bottom: 0px;
+  }
+
+  @media screen and (min-width: 1200px) {
+    padding-top: 20px;
+    padding-bottom: 3px;
+  }
+}
+
+
+/* Header-burger */
+
+.header-burger{
+  padding: 0;
+  border: 0;
+
+  background-color: var(--main-green);
+
+  @media screen and (min-width: 768px) {
+    margin-right: 32px;
+  }
+
+  @media screen and (min-width: 1200px) {
+    display: none;
+  }
+
+}
+
+.header-burger__svg{
+  display: flex;
+  width: 32px;
+  height: 32px;
+  
+  fill: var(--white);
+}
+
+
+.header__button{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 35px 12px 36px;
+  width: 152px;
+  height: 42px;
+
+  border-radius: 10px;
+  border: 0;
+
+  font-weight: 600;
+  font-size: 14px;
+
+  background-color: var(--main-yellow);
+  transition: background-color 250ms var(--cubic-bezier), color 250ms var(--cubic-bezier), fill 250ms var(--cubic-bezier);
+  @media screen and (max-width: 767px) {
+    display: none;
+  }
+}
+
+.header__button:hover,
+.header__button:focus,
+.header__button:active{
+  background-color: var(--chocolate);
+  color: var(--white);
+  fill: var(--white);
+}
+
+.header__button-svg{
+
+  width: 12px;
+  height: 12px;
+}
+
+
+/* MODAL */
+/* Header */
+
+.header-backdrop{
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  width: 100vw;
+  height: 100%;
+
+  background-color: var(--main-green);
+  transition: transform 600ms cubic-bezier(0.25, 0.1, 0.25, 1);
+  @media screen and (min-width: 1200px){
+    display: none;
+  }
+
+}
+
+.header-backdrop.is-hidden{
+  transform: translateX(100%);
+}
+
+.header-modal{
+  
+  @media screen and (max-width: 319px){
+    padding: 16px 20px;
+  }
+
+  @media screen and (min-width: 320px){
+    padding: 16px 20px;
+  }
+
+  @media screen and (min-width: 480px){
+    padding: 20px 20px;
+  }
+
+  @media screen and (min-width: 768px){
+    padding: 32px 32px;
+  }
+}
+
+.header-modal__header{
+  display: flex;
+  justify-content: end;
+}
+
+.header-modal__close{
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  border: 0;
+
+  background-color: var(--main-green);
+}
+
+.modal-header__nav{
+  @media screen and (max-width: 479px){
+    margin-top: 52px;
+  }
+
+  @media screen and (min-width: 480px){
+    margin-top: 40px;
+  }
+
+  @media screen and (min-width: 768px){
+    margin-top: 76px;
+  }
+}
+
+.modal-header__item:hover .modal-header__link {
+  color: #131313;
+}
+
+.modal-header__item{
+  text-align: center;
+  transition: transform 250ms var(--cubic-bezier);
+}
+
+.modal-header__item:hover,
+.modal-header__item:focus,
+.modal-header__item:active{
+  transform: scale(1.15);
+}
+
+.modal-header__item:focus-within {
+  transform: scale(1.15);
+}
+
+.modal-header__item + .modal-header__item{
+  margin-top: 32px;
+
+  @media screen and (min-width: 768px){
+    margin-top: 40px;
+  }
+}
+
+.modal-header__link{
+  font-weight: 700;
+  font-size: 32px;
+
+  color: var(--text-light);
+  transition: color 250ms var(--cubic-bezier);
+
+  @media screen and (min-width: 768px){
+    font-size: 48px;
+  }
+}
+
+.modal-header__link:focus,
+.modal-header__link:active{
+  color: var(--text-dark);
+}
+
+.modal-header__button{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 35px 12px 36px;
+  width: 152px;
+  height: 42px;
+
+  margin-right: auto;
+  margin-left: auto;
+  border-radius: 10px;
+  border: 0;
+
+  font-weight: 600;
+  font-size: 14px;
+
+  background-color: var(--main-yellow);
+
+  transition: background-color 250ms var(--cubic-bezier), color 250ms var(--cubic-bezier), fill 250ms var(--cubic-bezier);
+
+  @media screen and (min-width: 768px){
+    display: none;
+  }
+
+  @media screen and (max-width: 479px){
+    margin-top: 110px;
+  }
+
+  @media screen and (min-width: 480px){
+    margin-top: 114px;
+  }
+}
+
+.modal-header__button:hover,
+.modal-header__button:focus,
+.modal-header__button:active{
+  background-color: var(--chocolate);
+  color: var(--white);
+  fill: var(--white);
+}
+
+
+/* Buy now modal */
+
+.buy-now__header-backdrop.is-hidden{
+  /* display: none; */
+  pointer-events: none;
+  opacity: 0;
+}
+
+
+.buy-now__header-backdrop{
+  backdrop-filter: blur(5px);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100%;
+
+  z-index: 3;
+  opacity: 1;
+  transition: opacity 250ms var(--cubic-bezier);
+}
+
+.buy-now__header-modal{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  width: 568px;
+  height: 664px;
+  border-radius: 10px;
+  padding: 32px 54px;
+
+  border: 2px solid var(--main-yellow);
+
+  background-color: var(--text-light);
+
+  @media screen and (max-width: 767px) {
+    padding: 28px;
+    width: 280px;
+    height: 100%;
+    overflow-y: scroll;
+    scrollbar-width: thin;
+  }
+}
+
+
+.buy-now__button{
+  position: absolute;
+  top: 12px;
+  right: 12px;
+
+  border: 0;
+  padding: 0;
+  background-color: var(--text-light);
+}
+
+.buy-now__svg{
+  display: block;
+  width: 24px;
+  height: 24px;
+}
+
+.buy-now__title{
+  text-align: center;
+  margin-bottom: 103px;
+
+  font-family: var(--second-family);
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 140%;
+
+  color: var(--text-dark);
+
+  @media screen and (max-width: 767px) {
+    font-size: 16px;
+    line-height: 150%;
+
+    margin-bottom: 83px;
+  }
+}
+
+.buy-now__list{
+  display: flex;
+  justify-content: space-between;
+
+  margin-bottom: 40px;
+
+  @media screen and (max-width: 767px) {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+.buy-now__item + .buy-now__item{
+  @media screen and (max-width: 767px) {
+    margin-top: 82px;
+  }
+}
+
+.buy-now__item > input{
+  position: absolute;
+  width: 1px;
+  height: 1px;  
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
+.buy-now__label{
+  position: relative;
+
+  width: 132px;
+  height: 135px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+
+  border-radius: 15px;
+}
+
+[name="products"]:checked ~ .buy-now__label-ice-cream{
+  background-color: var(--green-border);
+}
+
+[name="products"]:checked ~ .buy-now__label-ice-coffee{
+  background-color: var(--light-yellow);
+}
+
+[name="products"]:checked ~ .buy-now__label-milkshake{
+  background-color: var(--chocolate);
+}
+
+.buy-now__label-ice-cream{
+  border: 2px solid var(--green-border);
+  transition: background-color 250ms var(--cubic-bezier);
+}
+
+.buy-now__label-ice-coffee{
+  border: 2px solid var(--light-yellow);
+  transition: background-color 250ms var(--cubic-bezier);
+}
+
+.buy-now__label-milkshake{
+  border: 2px solid var(--chocolate);
+  transition: background-color 250ms var(--cubic-bezier);
+}
+
+.buy-now__circle{
+  position: absolute;
+  top: calc(-50% + 7px);
+
+  display: block;
+  width: 132px;
+  height: 132px;
+  border-radius: 50%;
+
+  background-color: blueviolet;
+}
+
+.buy-now__circle-ice-cream{
+  background-color: rgba(156, 190, 143, 0.7);
+  box-shadow: 0 5px 20px 0 rgba(10, 136, 23, 0.25);
+}
+
+.buy-now__circle-ice-coffee{
+  background-color:  rgba(248, 210, 78, 0.7);
+  box-shadow: 0 5px 20px 0 rgba(153, 114, 23, 0.25);
+}
+
+.buy-now__circle-milkshake{
+  background-color:  rgba(213, 117, 63, 0.7);
+  box-shadow: 0 5px 20px 0 rgba(0, 0, 0, 0.25);
+}
+
+.buy-now__picture{
+  position: absolute;
+  top: -50%;
+  width: 132px;
+  height: 132px;
+  
+}
+
+.buy-now__picture > img{
+  border-radius: 50%;
+}
+
+.buy-now__subtitle{
+  display: flex;
+  margin-bottom: 20px;
+
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--text-dark);
+}
+
+.buy-now__box-form{
+  text-align: center;
+}
+
+.buy-now__input{
+  width: 368px;
+  height: 42px;
+  padding: 11px 16px;
+
+  border-radius: 10px;
+
+  border: 1px solid var(--main-green);
+  background-color: var(--light-yellow-rgba);
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 140%;
+
+  @media screen and (max-width: 767px) {
+    width: 224px;
+    height: 32px;
+  }
+}
+
+.buy-now__input:nth-child(2){
+  margin-top: 16px;
+  margin-bottom: 16px;
+}
+
+.buy-now__texteria{
+  resize: none;
+  width: 368px;
+  height: 84px;
+  padding: 11px 16px;
+
+  border-radius: 10px;
+
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 140%;
+  border: 1px solid var(--main-green);
+  background-color: var(--light-yellow-rgba);
+
+  @media screen and (max-width: 767px) {
+    width: 224px;
+    height: 65px;
+  }
+}
+
+.buy-now__submit{
+  border-radius: 10px;
+  width: 121px;
+  height: 42px;
+  border: 0;
+
+  margin-top: 32px;
+
+  background-color: var(--main-yellow);
+  transition: background-color 250ms var(--cubic-bezier), color 250ms var(--cubic-bezier), fill 250ms var(--cubic-bezier);
+}
+
+.buy-now__submit:hover,
+.buy-now__submit:focus,
+.buy-now__submit:active{
+  background-color: var(--chocolate);
+  color: var(--white);
 }
