@@ -24,12 +24,6 @@ body {
   background-color: var(--main-green);
 }
 
-/* 
-button:hover {
-  transform: scale(1.1);
-  transition: transform 250ms var(--cubic-bezier);
-} */
-
 h1,
 h2,
 h3,
@@ -189,10 +183,6 @@ stroke: currentColor;
 }
 
 /* Logo */
-
-.header__logo{
-  z-index: 2;
-}
 
 .header__logo-svg{
   width: 40px;
@@ -362,7 +352,10 @@ stroke: currentColor;
   @media screen and (min-width: 1200px){
     display: none;
   }
-
+  overflow-x: hidden;
+  overflow-y: auto;
+  scrollbar-width: thin;
+  height: 100%;
 }
 
 .header-backdrop.is-hidden{
@@ -370,7 +363,6 @@ stroke: currentColor;
 }
 
 .header-modal{
-  
   @media screen and (max-width: 319px){
     padding: 16px 20px;
   }
@@ -390,7 +382,7 @@ stroke: currentColor;
 
 .header-modal__header{
   display: flex;
-  justify-content: end;
+  justify-content: space-between;
 }
 
 .header-modal__close{
@@ -428,11 +420,11 @@ stroke: currentColor;
 .modal-header__item:hover,
 .modal-header__item:focus,
 .modal-header__item:active{
-  transform: scale(1.15);
+  transform: scale(1.09);
 }
 
 .modal-header__item:focus-within {
-  transform: scale(1.15);
+  transform: scale(1.09);
 }
 
 .modal-header__item + .modal-header__item{
