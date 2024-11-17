@@ -57,31 +57,39 @@
       <div class="hero-header">
         <div>
           <div class="hero-header__title-box">
-            <h1 class="hero-header__title">ice cream made with<span>passion</span></h1>
+            <h1 class="hero-header__title">
+              ice cream made with<span>passion</span>
+            </h1>
             <button class="hero-header__button-products" type="button">
               Products
             </button>
             <button class="hero-header__button-made" type="button">
-              How it’s made?
+              How it&#39;s made?
             </button>
           </div>
           <div class="hero-header__indulge">
             <picture>
-              <source srcset="
-              ./images/desktop/more-ice-cream-desktop.png 1x,
-              ./images/desktop/more-ice-cream-desktop2x.png 2x"
-              media="(min-width: 1200px)">
+              <source
+                srcset="
+                  ./images/desktop/more-ice-cream-desktop.png   1x,
+                  ./images/desktop/more-ice-cream-desktop2x.png 2x
+                "
+                media="(min-width: 1200px)"
+              />
 
-              <source srcset="
-              ./images/tablet/more-ice-cream-tablet.png 1x,
-              ./images/tablet/more-ice-cream-tablet2x.png 2x"
-              media="(min-width: 768px)">
-            <img
-              class="hero-header__picture"
-              src="./images/desktop/more-ice-cream-desktop.png"
-              alt="More ice cream"
-              width="152"
-            />
+              <source
+                srcset="
+                  ./images/tablet/more-ice-cream-tablet.png   1x,
+                  ./images/tablet/more-ice-cream-tablet2x.png 2x
+                "
+                media="(min-width: 768px)"
+              />
+              <img
+                class="hero-header__picture"
+                src="./images/desktop/more-ice-cream-desktop.png"
+                alt="More ice cream"
+                width="152"
+              />
             </picture>
             <div class="hero-header__subtitle-wrapper">
               <p class="hero-header__subtitle">
@@ -98,25 +106,37 @@
         </div>
         <div class="hero-header__ice-cream">
           <picture>
-            <source srcset="
-              ./images/mobile/ice-cream-mobile.png 1x,
-              ./images/mobile/ice-cream-mobile2x.png 2x"
-              media="(max-width: 479px)">
+            <source
+              srcset="
+                ./images/mobile/ice-cream-mobile.png   1x,
+                ./images/mobile/ice-cream-mobile2x.png 2x
+              "
+              media="(max-width: 479px)"
+            />
 
-              <source srcset="
-              ./images/desktop/ice-cream-desktop.png 1x,
-              ./images/desktop/ice-cream-desktop2x.png 2x"
-              media="(min-width: 1200px)">
+            <source
+              srcset="
+                ./images/desktop/ice-cream-desktop.png   1x,
+                ./images/desktop/ice-cream-desktop2x.png 2x
+              "
+              media="(min-width: 1200px)"
+            />
 
-              <source srcset="
-              ./images/tablet/ice-cream-tablet.png 1x,
-              ./images/tablet/ice-cream-tablet2x.png 2x"
-              media="(min-width: 768px)">
+            <source
+              srcset="
+                ./images/tablet/ice-cream-tablet.png   1x,
+                ./images/tablet/ice-cream-tablet2x.png 2x
+              "
+              media="(min-width: 768px)"
+            />
 
-              <source srcset="
-              ./images/mobile/ice-cream-480.png 1x,
-              ./images/mobile/ice-cream-480-2x.png 2x"
-              media="(min-width: 480px)">
+            <source
+              srcset="
+                ./images/mobile/ice-cream-480.png    1x,
+                ./images/mobile/ice-cream-480-2x.png 2x
+              "
+              media="(min-width: 480px)"
+            />
             <img
               class="hero-header__picture-ice-cream"
               src="./images/mobile/ice-cream-mobile.png"
@@ -136,7 +156,166 @@
         </div>
       </div>
     </header>
-    <main></main>
+    <main>
+      <section class="products">
+        <div class="container">
+          <div class="products-box">
+            <label class="products-box__label">100&#37; natural</label>
+            <h2 class="products-box__title">products</h2>
+          </div>
+          <ul class="products__list">
+            <li class="products__item products__item-ice-cream">
+              <div class="products__circle products__circle-ice-cream"></div>
+              <picture class="products__picture">
+
+                <source
+                  srcset="
+                    ./images/desktop/ice-cream-desktop.webp   1x,
+                    ./images/desktop/ice-cream-desktop2x.webp 2x
+                  "
+                  media="(min-width: 1200px)"
+                  type="image/webp"
+                />
+
+                <source
+                srcset="
+                    ./images/desktop/ice-cream-desktop.jpg   1x,
+                    ./images/desktop/ice-cream-desktop2x.jpg 2x
+                  "
+                  media="(min-width: 1200px)"
+                />
+
+                <source
+                  srcset="
+                    ./images/general/ice-cream.webp   1x,
+                    ./images/general/ice-cream2x.webp 2x
+                  "
+                  type="image/webp"
+                />
+                <img
+                  srcset="
+                    ./images/general/ice-cream.jpg   1x,
+                    ./images/general/ice-cream2x.jpg 2x
+                  "
+                  src="./images/general/ice-cream.jpg"
+                  alt="Ice cream"
+                  width="200"
+                />
+              </picture>
+              <h3 class="products__title">ice cream</h3>
+              <p class="products__subtitle">
+                Soft ice cream with a delicate taste. Made with milk, cream, sugar
+                and natural stabilizer
+              </p>
+              <button data-modal-info-1-open class="products__button" type="button">
+                <svg class="products__svg">
+                  <use href="./images/sprite.svg#arrow"></use>
+                </svg>
+              </button>
+            </li>
+            <li class="products__item products__item-ice-coffee">
+              <div class="products__circle products__circle-ice-coffee"></div>
+              <picture class="products__picture">
+
+                <source
+                  srcset="
+                    ./images/desktop/ice-coffee-desktop.webp   1x,
+                    ./images/desktop/ice-coffee-desktop2x.webp 2x
+                  "
+                  media="(min-width: 1200px)"
+                  type="image/webp"
+                />
+
+                <source
+                srcset="
+                    ./images/desktop/ice-coffee-desktop.jpg   1x,
+                    ./images/desktop/ice-coffee-desktop2x.jpg 2x
+                  "
+                  media="(min-width: 1200px)"
+                />
+
+                <source
+                  srcset="
+                    ./images/general/ice-coffee.webp   1x,
+                    ./images/general/ice-coffee2x.webp 2x
+                  "
+                  type="image/webp"
+                />
+                <img
+                  srcset="
+                    ./images/general/ice-coffee.jpg   1x,
+                    ./images/general/ice-coffee2x.jpg 2x
+                  "
+                  src="./images/general/ice-coffee.jpg"
+                  alt="Ice coffee"
+                  width="200"
+                />
+              </picture>
+              <h3 class="products__title">ice coffee</h3>
+              <p class="products__subtitle">
+                Fragrant invigorating drink created from 100&#37; natural
+                ingredients without the use of preservatives and flavor enhancers
+              </p>
+              <button data-modal-info-2-open class="products__button" type="button">
+                <svg class="products__svg">
+                  <use href="./images/sprite.svg#arrow"></use>
+                </svg>
+              </button>
+            </li>
+            <li class="products__item products__item-milkshake">
+              <div class="products__circle products__circle-milkshake"></div>
+              <picture class="products__picture">
+
+                <source
+                  srcset="
+                    ./images/desktop/milkshake-desktop.webp   1x,
+                    ./images/desktop/milkshake-desktop2x.webp 2x
+                  "
+                  media="(min-width: 1200px)"
+                  type="image/webp"
+                />
+
+                <source
+                srcset="
+                    ./images/desktop/milkshake-desktop.jpg   1x,
+                    ./images/desktop/milkshake-desktop2x.jpg 2x
+                  "
+                  media="(min-width: 1200px)"
+                />
+
+                <source
+                  srcset="
+                    ./images/general/milkshake.webp   1x,
+                    ./images/general/milkshake2x.webp 2x
+                  "
+                  type="image/webp"
+                />
+                <img
+                  srcset="
+                    ./images/general/milkshake.jpg   1x,
+                    ./images/general/milkshake2x.jpg 2x
+                  "
+                  src="./images/general/milkshake.jpg"
+                  alt="Milkshake"
+                  width="200"
+                />
+              </picture>
+              <h3 class="products__title">milkshakes</h3>
+              <p class="products__subtitle">
+                Sweet drinks based on milk and ice cream, supplemented with
+                syrups, fruits, berries and other sweets of your choice
+              </p>
+              <button data-modal-info-3-open class="products__button" type="button">
+                <svg class="products__svg">
+                  <use href="./images/sprite.svg#arrow"></use>
+                </svg>
+              </button>
+            </li>
+          </ul>
+        </div>
+      </section>
+    </main>
+
     <footer></footer>
     <!-- MODAL -->
     <!-- header -->
@@ -292,6 +471,316 @@
               </label>
             </li>
           </ul>
+          <div class="buy-now__box-form">
+            <input
+              class="buy-now__input"
+              type="text"
+              name="username"
+              placeholder="Name"
+              required
+            />
+            <input
+              class="buy-now__input"
+              type="tel"
+              name="phone"
+              placeholder="Phone"
+              required
+              pattern="^\+380\d{9}$"
+              title="Формат: +380XXXXXXXXX"
+            />
+            <textarea
+              class="buy-now__texteria"
+              name="Comment"
+              placeholder="Comment"
+            ></textarea>
+            <button class="buy-now__submit" type="submit">Submit</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <!-- INFO_MODAL -->
+    <div data-modal-info-1 class="backdrop-info is-hidden">
+      <div class="modal-info modal-info-container">
+        <button data-modal-info-1-close class="buy-now__button" type="button">
+          <svg class="buy-now__svg">
+            <use href="./images/sprite.svg#vector-close"></use>
+          </svg>
+        </button>
+        <h2 class="modal-info__title">Ice cream</h2>
+        <div>
+          <div class="modal-info__circle"></div>
+          <picture class="modal-info__picture">
+            <source
+              srcset="
+                ./images/general/ice-cream-chocolate.webp   1x,
+                ./images/general/ice-cream-chocolate2x.webp 2x
+              "
+              type="image/webp"
+            />
+            <img
+              srcset="
+                ./images/general/ice-cream-chocolate.jpg   1x,
+                ./images/general/ice-cream-chocolate2x.jpg 2x
+              "
+              src="./images/general/ice-cream-chocolate.jpg"
+              alt="Ice cream chocolate"
+              width="132"
+            />
+        </picture>
+        </div>
+        <ul class="modal-info__list">
+          <li class="modal-info__item">
+            <span class="modal-info__kcal-span">320</span>
+            <p class="modal-info__kcal-subtitle">kcal</p>
+          </li>
+          <li class="modal-info__item">
+            <span class="modal-info__kcal-span">4g</span>
+            <p class="modal-info__kcal-subtitle">Protein</p>
+          </li>
+          <li class="modal-info__item">
+            <span class="modal-info__kcal-span">8,2g</span>
+            <p class="modal-info__kcal-subtitle">Fats</p>
+          </li>
+          <li class="modal-info__item">
+            <span class="modal-info__kcal-span">40,4g</span>
+            <p class="modal-info__kcal-subtitle">Carbs</p>
+          </li>
+        </ul>
+        <p class="modal-info__subtitle">Ingredients</p>
+        <ul class="ingridients__list">
+          <li class="ingridients__item">
+            <span class="ingredients__span">Milk</span>
+            <span class="ingredients__span">100ml</span>
+          </li>
+          <li class="ingridients__item">
+            <span class="ingredients__span">Belgian chocolate</span>
+            <span class="ingredients__span">20g</span>
+          </li>
+          <li class="ingridients__item">
+            <span class="ingredients__span">Cream</span>
+            <span class="ingredients__span">150 ml</span>
+          </li>
+          <li class="ingridients__item">
+            <span class="ingredients__span">Cocoa powder</span>
+            <span class="ingredients__span"> 30g</span>
+          </li>
+          <li class="ingridients__item">
+            <span class="ingredients__span">Sugar</span>
+            <span class="ingredients__span">40g</span>
+          </li>
+          <li class="ingridients__item">
+            <span class="ingredients__span">Vanilla sugar</span>
+            <span class="ingredients__span">10g</span>
+          </li>
+        </ul>
+        <form>
+          <div class="buy-now__box-form">
+            <input
+              class="buy-now__input"
+              type="text"
+              name="username"
+              placeholder="Name"
+              required
+            />
+            <input
+              class="buy-now__input"
+              type="tel"
+              name="phone"
+              placeholder="Phone"
+              required
+              pattern="^\+380\d{9}$"
+              title="Формат: +380XXXXXXXXX"
+            />
+            <textarea
+              class="buy-now__texteria"
+              name="Comment"
+              placeholder="Comment"
+            ></textarea>
+            <button class="buy-now__submit" type="submit">Submit</button>
+          </div>
+        </form>
+      </div>
+    </div>
+    <!-- INFO MODAL 2 -->
+    <div data-modal-info-2 class="backdrop-info is-hidden">
+      <div class="modal-info modal-info-container">
+        <button data-modal-info-2-close class="buy-now__button" type="button">
+          <svg class="buy-now__svg">
+            <use href="./images/sprite.svg#vector-close"></use>
+          </svg>
+        </button>
+        <h2 class="modal-info__title">Ice coffee</h2>
+        <div>
+          <div class="modal-info__circle modal-info__circle-ice-coffee"></div>
+          <picture class="modal-info__picture">
+            <source
+              srcset="
+                ./images/general/ice-coffee-modal.webp   1x,
+                ./images/general/ice-coffee-modal2x.webp 2x
+              "
+              type="image/webp"
+            />
+            <img
+              srcset="
+                ./images/general/ice-coffee-modal.jpg   1x,
+                ./images/general/ice-coffee-modal2x.jpg 2x
+              "
+              src="./images/general/ice-coffee-modal.jpg"
+              alt="Ice coffee"
+              width="132"
+            />
+        </picture>
+        </div>
+        <ul class="modal-info__list">
+          <li class="modal-info__item modal-info__item-ice-coffee">
+            <span class="modal-info__kcal-span modal-info__kcal-span-ice-coffee">150</span>
+            <p class="modal-info__kcal-subtitle">kcal</p>
+          </li>
+          <li class="modal-info__item modal-info__item-ice-coffee">
+            <span class="modal-info__kcal-span modal-info__kcal-span-ice-coffee">2g</span>
+            <p class="modal-info__kcal-subtitle">Protein</p>
+          </li>
+          <li class="modal-info__item modal-info__item-ice-coffee">
+            <span class="modal-info__kcal-span modal-info__kcal-span-ice-coffee">5g</span>
+            <p class="modal-info__kcal-subtitle">Fats</p>
+          </li>
+          <li class="modal-info__item modal-info__item-ice-coffee">
+            <span class="modal-info__kcal-span modal-info__kcal-span-ice-coffee">25g</span>
+            <p class="modal-info__kcal-subtitle">Carbs</p>
+          </li>
+        </ul>
+        <p class="modal-info__subtitle">Ingredients</p>
+        <ul class="ingridients__list">
+          <li class="ingridients__item">
+            <span class="ingredients__span">Milk</span>
+            <span class="ingredients__span">100ml</span>
+          </li>
+          <li class="ingridients__item">
+            <span class="ingredients__span">Coffee</span>
+            <span class="ingredients__span">50ml</span>
+          </li>
+          <li class="ingridients__item">
+            <span class="ingredients__span">Cream</span>
+            <span class="ingredients__span">150 ml</span>
+          </li>
+          <li class="ingridients__item">
+            <span class="ingredients__span">Ice Cubes</span>
+            <span class="ingredients__span"> 6pcs</span>
+          </li>
+          <li class="ingridients__item">
+            <span class="ingredients__span">Sugar</span>
+            <span class="ingredients__span">40g</span>
+          </li>
+          <li class="ingridients__item">
+            <span class="ingredients__span">Chocolate Syrup</span>
+            <span class="ingredients__span">10g</span>
+          </li>
+        </ul>
+        <form>
+          <div class="buy-now__box-form">
+            <input
+              class="buy-now__input"
+              type="text"
+              name="username"
+              placeholder="Name"
+              required
+            />
+            <input
+              class="buy-now__input"
+              type="tel"
+              name="phone"
+              placeholder="Phone"
+              required
+              pattern="^\+380\d{9}$"
+              title="Формат: +380XXXXXXXXX"
+            />
+            <textarea
+              class="buy-now__texteria"
+              name="Comment"
+              placeholder="Comment"
+            ></textarea>
+            <button class="buy-now__submit" type="submit">Submit</button>
+          </div>
+        </form>
+      </div>
+    </div>
+    <!-- INFO MODAL 3 -->
+    <div data-modal-info-3 class="backdrop-info is-hidden">
+      <div class="modal-info modal-info-container">
+        <button data-modal-info-3-close class="buy-now__button" type="button">
+          <svg class="buy-now__svg">
+            <use href="./images/sprite.svg#vector-close"></use>
+          </svg>
+        </button>
+        <h2 class="modal-info__title">Milkshake</h2>
+        <div>
+          <div class="modal-info__circle modal-info__circle-milkshake"></div>
+          <picture class="modal-info__picture">
+            <source
+              srcset="
+                ./images/general/milkshake-modal.webp   1x,
+                ./images/general/milkshake-modal2x.webp 2x
+              "
+              type="image/webp"
+            />
+            <img
+              srcset="
+                ./images/general/milkshake-modal.jpg   1x,
+                ./images/general/milkshake-modal2x.jpg 2x
+              "
+              src="./images/general/milkshake-modal.jpg"
+              alt="Milkshake"
+              width="132"
+            />
+        </picture>
+        </div>
+        <ul class="modal-info__list">
+          <li class="modal-info__item">
+            <span class="modal-info__kcal-span">220</span>
+            <p class="modal-info__kcal-subtitle">kcal</p>
+          </li>
+          <li class="modal-info__item">
+            <span class="modal-info__kcal-span">6g</span>
+            <p class="modal-info__kcal-subtitle">Protein</p>
+          </li>
+          <li class="modal-info__item">
+            <span class="modal-info__kcal-span">10g</span>
+            <p class="modal-info__kcal-subtitle">Fats</p>
+          </li>
+          <li class="modal-info__item">
+            <span class="modal-info__kcal-span">24g</span>
+            <p class="modal-info__kcal-subtitle">Carbs</p>
+          </li>
+        </ul>
+        <p class="modal-info__subtitle">Ingredients</p>
+        <ul class="ingridients__list">
+          <li class="ingridients__item">
+            <span class="ingredients__span">Milk</span>
+            <span class="ingredients__span">100ml</span>
+          </li>
+          <li class="ingridients__item">
+            <span class="ingredients__span">Ice cream</span>
+            <span class="ingredients__span">100g</span>
+          </li>
+          <li class="ingridients__item">
+            <span class="ingredients__span">Cream</span>
+            <span class="ingredients__span">150 ml</span>
+          </li>
+          <li class="ingridients__item">
+            <span class="ingredients__span">Whipped Cream</span>
+            <span class="ingredients__span"> 30g</span>
+          </li>
+          <li class="ingridients__item">
+            <span class="ingredients__span">Sugar</span>
+            <span class="ingredients__span">40g</span>
+          </li>
+          <li class="ingridients__item">
+            <span class="ingredients__span">Banana</span>
+            <span class="ingredients__span">50g</span>
+          </li>
+        </ul>
+        <form>
           <div class="buy-now__box-form">
             <input
               class="buy-now__input"
