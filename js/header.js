@@ -30,6 +30,16 @@
     openModalBtn6: document.querySelector("[data-modal-video-open]"),
     closeModalBtn6: document.querySelector("[data-modal-video-close]"),
     modal6: document.querySelector("[data-modal-video]"),
+
+    // Для сьомої модалки (локація)
+    openModalBtn7: document.querySelector("[data-modal-location-open]"),
+    closeModalBtn7: document.querySelector("[data-modal-location-close]"),
+    modal7: document.querySelector("[data-modal-location]"),
+
+    // Для восьмої модалки (франшиза)
+    openModalBtn8: document.querySelector("[data-modal-franchise-open]"),
+    closeModalBtn8: document.querySelector("[data-modal-franchise-close]"),
+    modal8: document.querySelector("[data-modal-franchise]"),
   };
 
   // Перша модалка
@@ -58,6 +68,14 @@
   // Шоста модалка (відео)
   refs.openModalBtn6.addEventListener("click", toggleModal6);
   refs.closeModalBtn6.addEventListener("click", toggleModal6);
+
+   // Сьома модалка (локація)
+  refs.openModalBtn7.addEventListener("click", toggleModal7);
+  refs.closeModalBtn7.addEventListener("click", toggleModal7);
+
+  // Восьма модалка (франшиза)
+  refs.openModalBtn8.addEventListener("click", toggleModal8);
+  refs.closeModalBtn8.addEventListener("click", toggleModal8);
 
   // Функція для першої модалки
   function toggleModal() {
@@ -88,4 +106,35 @@
   function toggleModal6() {
     refs.modal6.classList.toggle("is-hidden");
   }
+
+   // Функція для сьомої модалки (локація)
+  function toggleModal7() {
+    refs.modal7.classList.toggle("is-hidden");
+  }
+
+  // Функція для восьмої модалки (франшиза)
+  function toggleModal8() {
+    refs.modal8.classList.toggle("is-hidden");
+  }
+})();
+
+(() => {
+  const refs = {
+    modal: document.querySelector("[data-modal]"), // Ваша модалка
+    modalLinks: document.querySelectorAll('.modal-header__link'), // Посилання в модалці
+  };
+
+  // Функція закриття модалки
+  function closeModal() {
+    if (!refs.modal.classList.contains("is-hidden")) {
+      refs.modal.classList.add("is-hidden");
+    }
+  }
+
+  // Додаємо обробник подій до кожного посилання
+  refs.modalLinks.forEach(link => {
+    link.addEventListener("click", (event) => {
+      closeModal(); // Закриваємо модалку
+    });
+  });
 })();
