@@ -2601,7 +2601,7 @@ stroke: currentColor;
   left: 0;
   width: 100%;
   height: 100%;
-  z-index: 2;
+  z-index: 6;
 
   backdrop-filter: blur(3px);
   transition: opacity 250ms var(--cubic-bezier);
@@ -2617,6 +2617,7 @@ stroke: currentColor;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  z-index: 6;
 
   padding: 28px;
 
@@ -2686,7 +2687,7 @@ stroke: currentColor;
   width: 100%;
   height: 100%;
   backdrop-filter: blur(3px);
-  z-index: 2;
+  z-index: 6;
 
   transition: opacity 250ms var(--cubic-bezier);
 }
@@ -2710,14 +2711,17 @@ stroke: currentColor;
   border: 2px solid var(--main-yellow);
   border-radius: 10px;
   width: 280px;
-  height: 365px;
+  max-height: 458px;
+  height: calc(100% - 10px);
+  overflow-y: auto;
+  scrollbar-width: thin;
 
 
   background-color: var(--text-light);
 
   @media screen and (min-width: 768px) {
     width: 568px;
-    height: 458px;
+    max-height: 458px;
   }
 }
 
@@ -2746,7 +2750,7 @@ stroke: currentColor;
 }
 
 .location__button{
-  padding: 0;
+  padding: 12px 28px;
   border: 0;
   border-radius: 10px;
   width: 134px;
@@ -2785,7 +2789,7 @@ stroke: currentColor;
   width: 100%;
   height: 100%;
   backdrop-filter: blur(3px);
-  z-index: 2;
+  z-index: 6;
 
   transition: opacity 250ms var(--cubic-bezier);
 }
@@ -2800,6 +2804,7 @@ stroke: currentColor;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  z-index: 6;
 
   padding: 28px;
   border: 2px solid var(--main-yellow);
