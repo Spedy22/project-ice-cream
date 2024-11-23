@@ -363,6 +363,7 @@ stroke: currentColor;
   font-weight: 600;
   font-size: 14px;
 
+  color: var(--text-dark);
   background-color: var(--main-yellow);
   transition: background-color 250ms var(--cubic-bezier), color 250ms var(--cubic-bezier), fill 250ms var(--cubic-bezier);
   @media screen and (max-width: 767px) {
@@ -2078,6 +2079,7 @@ stroke: currentColor;
   font-weight: 600;
   font-size: 14px;
 
+  color: var(--text-dark);
   background-color: var(--main-yellow);
 
   transition: background-color 250ms var(--cubic-bezier), color 250ms var(--cubic-bezier), fill 250ms var(--cubic-bezier);
